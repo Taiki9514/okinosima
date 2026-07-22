@@ -1,1 +1,427 @@
-index.html
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Klee+One:wght@400;600&family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{ box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  html,body{ margin:0; padding:0; height:100%; }
+  body{ font-family:'Klee One',cursive; background:#e0952a; overflow:hidden; }
+  a{ color:#c8712a; } a:hover{ color:#e0952a; }
+  .card::-webkit-scrollbar{ display:none; }
+  @keyframes floaty{ 0%,100%{ transform:translateY(0) rotate(-6deg); } 50%{ transform:translateY(-9px) rotate(6deg); } }
+</style>
+</helmet>
+
+<svg style="position:absolute;width:0;height:0" aria-hidden="true"><defs>
+  <symbol id="bee" viewBox="0 0 44 32">
+    <ellipse cx="12" cy="9" rx="8" ry="4.5" fill="#fff" opacity=".85" transform="rotate(-22 12 9)"/>
+    <ellipse cx="30" cy="9" rx="8" ry="4.5" fill="#fff" opacity=".85" transform="rotate(22 30 9)"/>
+    <ellipse cx="21" cy="19" rx="12" ry="8.5" fill="#f2b33d"/>
+    <path d="M17 12 v14 M23 12 v14" stroke="#5a3d20" stroke-width="2.6"/>
+    <circle cx="33" cy="17" r="2.4" fill="#5a3d20"/>
+  </symbol>
+  <symbol id="pot" viewBox="0 0 44 46">
+    <path d="M8 16 q14 -6 28 0 l-4 24 q-10 5 -20 0z" fill="#c98a4a"/>
+    <path d="M8 16 q14 -6 28 0 l-1 6 q-13 -5 -26 0z" fill="#b1743a"/>
+    <rect x="6" y="9" width="32" height="9" rx="4.5" fill="#eaddbc"/>
+    <path d="M22 22 q4 5 0 10 q-4 -5 0 -10z" fill="#ffe08a"/>
+  </symbol>
+</defs></svg>
+
+<div id="book-root" style="--paper:#fbf1d6;--paper2:#f6e7bf;--ink:#5c4326;--sub:#a08558;--line:#d9bf8e;--honey:#f2b33d;--honey-d:#e0952a;--red:#d15a43;--green:#8ab26a;--sky:#8fbfe0;position:relative;height:100dvh;width:100vw;max-width:480px;margin:0 auto;overflow:hidden;background:radial-gradient(circle at 50% -12%, #ffdc84, #f2b33d 52%, #dd8f28 100%);">
+
+  <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);z-index:30;display:flex;flex-direction:column;align-items:center;pointer-events:none;">
+    <div style="width:40px;height:34px;background:var(--red);border-radius:0 0 12px 12px;box-shadow:0 4px 10px -4px rgba(90,40,20,.6);display:flex;align-items:flex-end;justify-content:center;padding-bottom:5px;">
+      <span id="pagetab" style="font-family:'Fredoka';font-weight:700;color:#fff;font-size:15px;">1</span>
+    </div>
+  </div>
+
+  <!-- FLIP BOOK -->
+  <div id="book" style="position:absolute;top:12px;left:14px;right:14px;bottom:58px;perspective:1700px;perspective-origin:50% 50%;touch-action:pan-y;">
+
+    <!-- ===== 1 COVER ===== -->
+    <div class="leaf" style="position:absolute;inset:0;transform-origin:left center;backface-visibility:hidden;-webkit-backface-visibility:hidden;will-change:transform;">
+      <div class="card" style="height:100%;overflow:hidden;border-radius:22px;padding:22px 22px 52px;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#5c3a18;border:2px solid #d99b3e;background:linear-gradient(172deg,#ffe6a8 0%,#f6bd52 46%,#ea9433 100%);box-shadow:inset 0 0 0 6px #ffe6a8,inset 0 0 0 7.5px #d99b3e,0 16px 34px -16px rgba(90,60,20,.55);">
+        <svg class="deco" style="position:absolute;top:26px;right:24px;width:40px;animation:floaty 4s ease-in-out infinite;" viewBox="0 0 44 32"><use href="#bee"/></svg>
+        <div style="display:inline-block;font-family:'Kaushan Script',cursive;font-size:16px;color:#fff;background:var(--red);padding:5px 18px;border-radius:999px;box-shadow:0 3px 0 rgba(120,40,20,.35);">A Little Summer Adventure</div>
+        <div style="width:170px;height:170px;margin:16px 0 6px;background:#fffdf6;border-radius:24px;box-shadow:0 10px 22px -10px rgba(120,70,20,.5);display:flex;align-items:center;justify-content:center;padding:8px;border:3px solid #fff;">
+          <img src="S__28917765_0.jpg" alt="" style="width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply;">
+        </div>
+        <div style="font-family:'Kaushan Script',cursive;font-size:50px;line-height:.9;color:#fff;text-shadow:0 3px 0 rgba(160,90,30,.5);">Trip Book</div>
+        <div style="font-family:'Klee One';font-weight:600;font-size:20px;margin-top:12px;letter-spacing:.12em;">沖ノ島 旅のしおり</div>
+        <div style="width:120px;height:2px;background:#5c3a18;opacity:.35;margin:12px auto;"></div>
+        <div style="font-family:'Klee One';font-weight:600;font-size:15px;">海と夕日の小さな冒険</div>
+        <div style="font-family:'Fredoka';font-weight:600;font-size:16px;letter-spacing:.06em;margin-top:6px;">2026 . 08 . 07 &nbsp;FRI</div>
+        <div id="swipeHint" style="position:absolute;bottom:18px;left:50%;transform:translateX(-50%);white-space:nowrap;font-family:'Klee One';font-weight:600;font-size:12.5px;color:#5c3a18;background:rgba(255,255,255,.72);padding:7px 16px;border-radius:999px;">← スワイプでめくってね →</div>
+      </div>
+      <div class="shade" style="position:absolute;inset:0;border-radius:22px;pointer-events:none;opacity:0;background:linear-gradient(90deg, rgba(40,25,5,.34) 0%, rgba(40,25,5,0) 30%, rgba(255,255,255,0) 72%, rgba(255,255,255,.5) 100%);"></div>
+    </div>
+
+    <!-- ===== 2 TODAY'S STORY ===== -->
+    <div class="leaf" style="position:absolute;inset:0;transform-origin:left center;backface-visibility:hidden;-webkit-backface-visibility:hidden;will-change:transform;">
+      <div class="card" style="height:100%;overflow-y:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;background:var(--paper);border:2px solid var(--line);border-radius:22px;padding:34px 24px 30px;position:relative;box-shadow:inset 0 0 0 6px var(--paper),inset 0 0 0 7.5px var(--line),0 16px 34px -16px rgba(90,60,20,.5);display:flex;flex-direction:column;align-items:center;text-align:center;">
+        <div style="font-family:'Kaushan Script',cursive;font-size:34px;color:var(--honey-d);line-height:1;">Today's Story</div>
+        <div style="display:flex;align-items:center;justify-content:center;gap:8px;margin:10px 0 14px;"><span style="height:1px;width:26px;background:var(--line);"></span><span style="font-size:13px;color:var(--sub);letter-spacing:.1em;">きょうのおはなし</span><span style="height:1px;width:26px;background:var(--line);"></span></div>
+        <img src="S__28917767_0.jpg" alt="" style="width:170px;height:170px;object-fit:contain;mix-blend-mode:multiply;margin:4px 0 12px;">
+        <p style="font-family:'Klee One';color:var(--ink);font-size:16px;line-height:2.1;margin:0;">今日は、いつもの毎日を<br>すこしだけ抜け出して──<br><br>海の向こうにある、<br>ちいさな冒険へ。<br><br>青い海、やさしい風、<br>きらきらした時間を、<br>いっしょに楽しもうね。♡</p>
+        <div style="margin-top:22px;font-family:'Kaushan Script',cursive;font-size:20px;color:var(--red);">Let's collect summer memories</div>
+      </div>
+      <div class="shade" style="position:absolute;inset:0;border-radius:22px;pointer-events:none;opacity:0;background:linear-gradient(90deg, rgba(40,25,5,.34) 0%, rgba(40,25,5,0) 30%, rgba(255,255,255,0) 72%, rgba(255,255,255,.5) 100%);"></div>
+    </div>
+
+    <!-- ===== 3 SCHEDULE ===== -->
+    <div class="leaf" style="position:absolute;inset:0;transform-origin:left center;backface-visibility:hidden;-webkit-backface-visibility:hidden;will-change:transform;">
+      <div class="card" style="height:100%;overflow-y:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;background:var(--paper);border:2px solid var(--line);border-radius:22px;padding:28px 22px 28px;position:relative;box-shadow:inset 0 0 0 6px var(--paper),inset 0 0 0 7.5px var(--line),0 16px 34px -16px rgba(90,60,20,.5);">
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;">
+          <div>
+            <div style="font-family:'Kaushan Script',cursive;font-size:29px;color:var(--honey-d);line-height:1;">Adventure Schedule</div>
+            <div style="display:flex;align-items:center;gap:8px;margin-top:7px;"><span style="font-size:13px;color:var(--sub);letter-spacing:.1em;">旅のスケジュール</span><span style="height:1px;width:24px;background:var(--line);"></span></div>
+          </div>
+          <img src="S__28917768_0.jpg" alt="" style="width:64px;height:64px;object-fit:contain;mix-blend-mode:multiply;flex:0 0 auto;">
+        </div>
+        <div style="position:relative;margin-top:16px;">
+          <div style="position:absolute;left:16px;top:8px;bottom:12px;width:2px;background:repeating-linear-gradient(var(--line) 0 4px, transparent 4px 9px);"></div>
+          <div style="position:relative;display:flex;gap:12px;padding-bottom:13px;"><div style="flex:0 0 auto;z-index:1;width:34px;height:34px;border-radius:50%;background:var(--red);color:#fff;font-family:'Fredoka';font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 0 rgba(150,60,40,.4);">1</div><div style="flex:1;"><div style="font-family:'Fredoka';font-weight:700;color:var(--honey-d);font-size:13px;">07:30頃</div><div style="font-family:'Klee One';font-weight:600;color:var(--ink);font-size:15px;">出発（最寄り駅）</div></div></div>
+          <div style="position:relative;display:flex;gap:12px;padding-bottom:13px;"><div style="flex:0 0 auto;z-index:1;width:34px;height:34px;border-radius:50%;background:var(--green);color:#fff;font-family:'Fredoka';font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 0 rgba(90,130,70,.4);">2</div><div style="flex:1;"><div style="font-family:'Fredoka';font-weight:700;color:var(--honey-d);font-size:13px;">09:40頃</div><div style="font-family:'Klee One';font-weight:600;color:var(--ink);font-size:15px;">館山駅 到着</div></div></div>
+          <div style="position:relative;display:flex;gap:12px;padding-bottom:13px;"><div style="flex:0 0 auto;z-index:1;width:34px;height:34px;border-radius:50%;background:var(--honey);color:#fff;font-family:'Fredoka';font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 0 var(--honey-d);">3</div><div style="flex:1;"><div style="font-family:'Fredoka';font-weight:700;color:var(--honey-d);font-size:13px;">10:10頃</div><div style="font-family:'Klee One';font-weight:600;color:var(--ink);font-size:15px;">バスで沖ノ島へ</div><div style="font-size:12px;color:var(--sub);margin-top:1px;">館山駅 西口から 約25分</div></div></div>
+          <div style="position:relative;display:flex;gap:12px;padding-bottom:13px;"><div style="flex:0 0 auto;z-index:1;width:34px;height:34px;border-radius:50%;background:var(--sky);color:#fff;font-family:'Fredoka';font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 0 #6b9ec2;">4</div><div style="flex:1;"><div style="font-family:'Fredoka';font-weight:700;color:var(--honey-d);font-size:13px;">10:40頃</div><div style="font-family:'Klee One';font-weight:600;color:var(--ink);font-size:15px;">沖ノ島 到着！</div><div style="font-size:12px;color:var(--sub);margin-top:1px;">海を散策・写真・貝殻探し</div></div></div>
+          <div style="position:relative;display:flex;gap:12px;padding-bottom:13px;"><div style="flex:0 0 auto;z-index:1;width:34px;height:34px;border-radius:50%;background:var(--red);color:#fff;font-family:'Fredoka';font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 0 rgba(150,60,40,.4);">5</div><div style="flex:1;"><div style="font-family:'Fredoka';font-weight:700;color:var(--honey-d);font-size:13px;">12:30頃</div><div style="font-family:'Klee One';font-weight:600;color:var(--ink);font-size:15px;">ランチ（海鮮を楽しもう！）</div></div></div>
+          <div style="position:relative;display:flex;gap:12px;padding-bottom:13px;"><div style="flex:0 0 auto;z-index:1;width:34px;height:34px;border-radius:50%;background:var(--green);color:#fff;font-family:'Fredoka';font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 0 rgba(90,130,70,.4);">6</div><div style="flex:1;"><div style="font-family:'Fredoka';font-weight:700;color:var(--honey-d);font-size:13px;">15:00頃</div><div style="font-family:'Klee One';font-weight:600;color:var(--ink);font-size:15px;">自由時間・のんびりタイム</div></div></div>
+          <div style="position:relative;display:flex;gap:12px;padding-bottom:13px;"><div style="flex:0 0 auto;z-index:1;width:34px;height:34px;border-radius:50%;background:var(--honey);color:#fff;font-family:'Fredoka';font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 0 var(--honey-d);">7</div><div style="flex:1;"><div style="font-family:'Fredoka';font-weight:700;color:var(--honey-d);font-size:13px;">17:30頃</div><div style="font-family:'Klee One';font-weight:600;color:var(--ink);font-size:15px;">サンセットを見よう</div></div></div>
+          <div style="position:relative;display:flex;gap:12px;padding-bottom:13px;"><div style="flex:0 0 auto;z-index:1;width:34px;height:34px;border-radius:50%;background:var(--sky);color:#fff;font-family:'Fredoka';font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 0 #6b9ec2;">8</div><div style="flex:1;"><div style="font-family:'Fredoka';font-weight:700;color:var(--honey-d);font-size:13px;">18:15頃</div><div style="font-family:'Klee One';font-weight:600;color:var(--ink);font-size:15px;">バスで館山駅へ</div></div></div>
+          <div style="position:relative;display:flex;gap:12px;"><div style="flex:0 0 auto;z-index:1;width:34px;height:34px;border-radius:50%;background:#8a6fc0;color:#fff;font-family:'Fredoka';font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 0 #6f56a3;">9</div><div style="flex:1;"><div style="font-family:'Fredoka';font-weight:700;color:var(--honey-d);font-size:13px;">19:30頃</div><div style="font-family:'Klee One';font-weight:600;color:var(--ink);font-size:15px;">帰宅（おつかれさま♪）</div></div></div>
+        </div>
+      </div>
+      <div class="shade" style="position:absolute;inset:0;border-radius:22px;pointer-events:none;opacity:0;background:linear-gradient(90deg, rgba(40,25,5,.34) 0%, rgba(40,25,5,0) 30%, rgba(255,255,255,0) 72%, rgba(255,255,255,.5) 100%);"></div>
+    </div>
+
+    <!-- ===== 4 TREASURE MAP ===== -->
+    <div class="leaf" style="position:absolute;inset:0;transform-origin:left center;backface-visibility:hidden;-webkit-backface-visibility:hidden;will-change:transform;">
+      <div class="card" style="height:100%;overflow-y:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;background:var(--paper);border:2px solid var(--line);border-radius:22px;padding:28px 20px 26px;position:relative;box-shadow:inset 0 0 0 6px var(--paper),inset 0 0 0 7.5px var(--line),0 16px 34px -16px rgba(90,60,20,.5);">
+        <div style="text-align:center;">
+          <div style="font-family:'Kaushan Script',cursive;font-size:32px;color:var(--honey-d);line-height:1;">Treasure Map</div>
+          <div style="display:flex;align-items:center;justify-content:center;gap:8px;margin:8px 0 16px;"><span style="height:1px;width:24px;background:var(--line);"></span><span style="font-size:13px;color:var(--sub);letter-spacing:.1em;">沖ノ島マップ</span><span style="height:1px;width:24px;background:var(--line);"></span></div>
+        </div>
+        <div style="position:relative;background:#cdeaf3;border:3px solid #fff;border-radius:18px;overflow:hidden;box-shadow:0 5px 0 #d6e2df,0 12px 22px -14px rgba(60,90,90,.5);">
+          <svg viewBox="0 0 360 320" width="100%" style="display:block;font-family:'Klee One',cursive;">
+            <defs>
+              <filter id="softm" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="1.4" stdDeviation="1.2" flood-color="#000" flood-opacity="0.16"/></filter>
+              <style>.ml{ font-size:8.5px; fill:#4a7a86; font-weight:700; paint-order:stroke; stroke:#fff; stroke-width:2.4px; stroke-linejoin:round; } .mt{ font-size:10px; fill:#c8712a; font-weight:700; paint-order:stroke; stroke:#fff; stroke-width:2.6px; }</style>
+            </defs>
+            <rect x="0" y="0" width="360" height="320" fill="#cdeaf3"/>
+            <g stroke="#b3ddea" stroke-width="2" fill="none" stroke-linecap="round"><path d="M20 40 q10 -6 20 0 t20 0"/><path d="M280 60 q10 -6 20 0 t20 0"/><path d="M40 280 q10 -6 20 0 t20 0"/><path d="M250 270 q10 -6 20 0 t20 0"/></g>
+            <!-- island -->
+            <path d="M96 74 q70 -30 150 6 q46 24 40 78 q-6 60 -66 84 q-70 26 -128 -8 q-48 -30 -40 -92 q6 -50 44 -68z" fill="#ecdcae"/>
+            <path d="M104 84 q64 -26 138 6 q40 22 34 70 q-6 52 -60 74 q-64 24 -116 -8 q-42 -28 -34 -82 q6 -44 38 -60z" fill="#cfe6ac"/>
+            <path d="M120 150 q40 -18 92 -6 q30 8 40 30 q-50 -14 -96 -6 q-40 6 -36 -18z" fill="#bcdc98"/>
+            <!-- lighthouse -->
+            <g filter="url(#softm)"><rect x="150" y="86" width="12" height="30" rx="2" fill="#fff"/><rect x="150" y="94" width="12" height="7" fill="var(--red)"/><rect x="150" y="107" width="12" height="7" fill="var(--red)"/><path d="M148 86 l16 0 -4 -8 -8 0z" fill="#ffcf5a"/></g>
+            <!-- trees -->
+            <g><circle cx="118" cy="118" r="11" fill="#7faf62"/><rect x="116" y="124" width="4" height="9" fill="#a77b4a"/><circle cx="210" cy="112" r="10" fill="#8cbb6d"/><rect x="208" y="118" width="4" height="8" fill="#a77b4a"/></g>
+            <!-- rocks -->
+            <g fill="#b7b0a6"><ellipse cx="120" cy="210" rx="16" ry="10"/><ellipse cx="138" cy="216" rx="11" ry="7"/></g>
+            <!-- beach umbrella -->
+            <g transform="translate(238,196)"><path d="M0 0 q10 -16 26 0z" fill="var(--red)"/><path d="M13 0 v16" stroke="#8a6a4a" stroke-width="2"/></g>
+            <!-- bench -->
+            <g transform="translate(178,150)" stroke="#a77b4a" stroke-width="2.4" fill="none"><path d="M0 6 h16 M0 6 v5 M16 6 v5 M0 2 h16"/></g>
+            <!-- sun sunset -->
+            <g filter="url(#softm)"><circle cx="288" cy="238" r="15" fill="#ffb454"/><g stroke="#ffb454" stroke-width="2.4" stroke-linecap="round"><path d="M288 216 v-8 M311 238 h8 M305 221 l6 -6 M305 255 l6 6"/></g></g>
+            <!-- treasure star -->
+            <path d="M176 100 l3 7 8 .6 -6 5.4 1.8 7.8 -6.6 -4.2 -6.6 4.2 1.8 -7.8 -6 -5.4 8 -.6z" fill="#ffcf3c" filter="url(#softm)"/>
+            <text x="176" y="132" class="ml" text-anchor="middle">Treasure Spot</text>
+            <text x="156" y="80" class="ml" text-anchor="middle">展望</text>
+            <text x="112" y="140" class="ml" text-anchor="middle">森の小道</text>
+            <text x="126" y="234" class="ml" text-anchor="middle">岩場エリア</text>
+            <text x="244" y="184" class="ml" text-anchor="middle">ビーチ</text>
+            <text x="292" y="266" class="ml" text-anchor="middle" style="fill:#c8712a;">Sunset</text>
+            <text x="196" y="146" class="ml" text-anchor="middle" style="font-size:7px;">休憩</text>
+            <text x="180" y="300" class="mt" text-anchor="middle">沖ノ島</text>
+          </svg>
+          <a href="https://www.google.com/maps/search/?api=1&query=%E6%B2%96%E3%83%8E%E5%B3%B6%20%E9%A4%A8%E5%B1%B1" target="_blank" rel="noopener" style="display:block;padding:9px 12px;background:#eaf6f0;font-size:11.5px;color:#4a7a86;font-weight:700;text-align:center;text-decoration:none;">📍 Googleマップで沖ノ島を開く</a>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px 12px;margin-top:14px;">
+          <div style="font-size:11.5px;color:var(--ink);"><b style="color:var(--red);">展望スポット</b><br>灯台と海を一望☆</div>
+          <div style="font-size:11.5px;color:var(--ink);"><b style="color:var(--red);">岩場エリア</b><br>洞窟や迫力の景色！</div>
+          <div style="font-size:11.5px;color:var(--ink);"><b style="color:var(--red);">ビーチエリア</b><br>きれいな砂浜でのんびり♪</div>
+          <div style="font-size:11.5px;color:var(--ink);"><b style="color:var(--red);">森の小道</b><br>自然の中をおさんぽ</div>
+          <div style="font-size:11.5px;color:var(--ink);"><b style="color:var(--red);">Sunset Point</b><br>夕日の絶景スポット♪</div>
+          <div style="font-size:11.5px;color:var(--ink);"><b style="color:var(--red);">休憩スポット</b><br>木陰でひと休み</div>
+        </div>
+      </div>
+      <div class="shade" style="position:absolute;inset:0;border-radius:22px;pointer-events:none;opacity:0;background:linear-gradient(90deg, rgba(40,25,5,.34) 0%, rgba(40,25,5,0) 30%, rgba(255,255,255,0) 72%, rgba(255,255,255,.5) 100%);"></div>
+    </div>
+
+    <!-- ===== 5 MISSION ===== -->
+    <div class="leaf" style="position:absolute;inset:0;transform-origin:left center;backface-visibility:hidden;-webkit-backface-visibility:hidden;will-change:transform;">
+      <div class="card" style="height:100%;overflow-y:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;background:var(--paper);border:2px solid var(--line);border-radius:22px;padding:28px 22px 26px;position:relative;box-shadow:inset 0 0 0 6px var(--paper),inset 0 0 0 7.5px var(--line),0 16px 34px -16px rgba(90,60,20,.5);">
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;">
+          <div>
+            <div style="font-family:'Kaushan Script',cursive;font-size:30px;color:var(--honey-d);line-height:1;">Summer Mission</div>
+            <div style="display:flex;align-items:center;gap:8px;margin-top:7px;"><span style="font-size:13px;color:var(--sub);letter-spacing:.1em;">やりたいことリスト</span><span style="height:1px;width:20px;background:var(--line);"></span></div>
+          </div>
+          <img src="S__28917769_0.jpg" alt="" style="width:60px;height:60px;object-fit:contain;mix-blend-mode:multiply;flex:0 0 auto;">
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px;margin-top:14px;">
+          <div class="chk" data-k="m1" data-on="0" style="display:flex;align-items:center;gap:12px;cursor:pointer;"><span class="box" style="width:24px;height:24px;flex:0 0 auto;border-radius:7px;border:2.5px solid var(--line);background:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:14px;"></span><span class="lbl" style="font-family:'Klee One';font-weight:600;font-size:15px;color:var(--ink);">綺麗な貝殻を見つける</span></div>
+          <div class="chk" data-k="m2" data-on="0" style="display:flex;align-items:center;gap:12px;cursor:pointer;"><span class="box" style="width:24px;height:24px;flex:0 0 auto;border-radius:7px;border:2.5px solid var(--line);background:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:14px;"></span><span class="lbl" style="font-family:'Klee One';font-weight:600;font-size:15px;color:var(--ink);">海でジャンプ写真を撮る！</span></div>
+          <div class="chk" data-k="m3" data-on="0" style="display:flex;align-items:center;gap:12px;cursor:pointer;"><span class="box" style="width:24px;height:24px;flex:0 0 auto;border-radius:7px;border:2.5px solid var(--line);background:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:14px;"></span><span class="lbl" style="font-family:'Klee One';font-weight:600;font-size:15px;color:var(--ink);">美味しい海鮮を食べる</span></div>
+          <div class="chk" data-k="m4" data-on="0" style="display:flex;align-items:center;gap:12px;cursor:pointer;"><span class="box" style="width:24px;height:24px;flex:0 0 auto;border-radius:7px;border:2.5px solid var(--line);background:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:14px;"></span><span class="lbl" style="font-family:'Klee One';font-weight:600;font-size:15px;color:var(--ink);">綺麗な景色をゆっくり見る</span></div>
+          <div class="chk" data-k="m5" data-on="0" style="display:flex;align-items:center;gap:12px;cursor:pointer;"><span class="box" style="width:24px;height:24px;flex:0 0 auto;border-radius:7px;border:2.5px solid var(--line);background:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:14px;"></span><span class="lbl" style="font-family:'Klee One';font-weight:600;font-size:15px;color:var(--ink);">動画をたくさん撮る</span></div>
+          <div class="chk" data-k="m6" data-on="0" style="display:flex;align-items:center;gap:12px;cursor:pointer;"><span class="box" style="width:24px;height:24px;flex:0 0 auto;border-radius:7px;border:2.5px solid var(--line);background:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:14px;"></span><span class="lbl" style="font-family:'Klee One';font-weight:600;font-size:15px;color:var(--ink);">二人で写真を10枚以上撮る</span></div>
+          <div class="chk" data-k="m7" data-on="0" style="display:flex;align-items:center;gap:12px;cursor:pointer;"><span class="box" style="width:24px;height:24px;flex:0 0 auto;border-radius:7px;border:2.5px solid var(--line);background:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:14px;"></span><span class="lbl" style="font-family:'Klee One';font-weight:600;font-size:15px;color:var(--ink);">夕日を一緒に見る</span></div>
+          <div class="chk" data-k="m8" data-on="0" style="display:flex;align-items:center;gap:12px;cursor:pointer;"><span class="box" style="width:24px;height:24px;flex:0 0 auto;border-radius:7px;border:2.5px solid var(--line);background:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:14px;"></span><span class="lbl" style="font-family:'Klee One';font-weight:600;font-size:15px;color:var(--ink);">夏を全力で楽しむ！！</span></div>
+        </div>
+        <div style="margin-top:18px;padding:12px 16px;background:var(--paper2);border-radius:14px;text-align:center;font-size:12.5px;color:var(--sub);font-weight:600;">ちいさな冒険も、大きな思い出になるよ ♡</div>
+      </div>
+      <div class="shade" style="position:absolute;inset:0;border-radius:22px;pointer-events:none;opacity:0;background:linear-gradient(90deg, rgba(40,25,5,.34) 0%, rgba(40,25,5,0) 30%, rgba(255,255,255,0) 72%, rgba(255,255,255,.5) 100%);"></div>
+    </div>
+
+    <!-- ===== 6 PACKING ===== -->
+    <div class="leaf" style="position:absolute;inset:0;transform-origin:left center;backface-visibility:hidden;-webkit-backface-visibility:hidden;will-change:transform;">
+      <div class="card" style="height:100%;overflow-y:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;background:var(--paper);border:2px solid var(--line);border-radius:22px;padding:28px 22px 26px;position:relative;box-shadow:inset 0 0 0 6px var(--paper),inset 0 0 0 7.5px var(--line),0 16px 34px -16px rgba(90,60,20,.5);">
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;">
+          <div>
+            <div style="font-family:'Kaushan Script',cursive;font-size:32px;color:var(--honey-d);line-height:1;">Packing List</div>
+            <div style="display:flex;align-items:center;gap:8px;margin-top:7px;"><span style="font-size:13px;color:var(--sub);letter-spacing:.1em;">持ち物チェック</span><span style="height:1px;width:20px;background:var(--line);"></span></div>
+          </div>
+          <img src="S__28917770_0.jpg" alt="" style="width:60px;height:60px;object-fit:contain;mix-blend-mode:multiply;flex:0 0 auto;">
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:9px 16px;margin-top:14px;">
+          <div class="chk" data-k="p1" data-on="0" style="display:flex;align-items:center;gap:10px;cursor:pointer;"><span class="box" style="width:22px;height:22px;flex:0 0 auto;border-radius:6px;border:2.5px solid var(--line);background:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:13px;"></span><span class="lbl" style="font-family:'Klee One';font-weight:600;font-size:14px;color:var(--ink);">財布・現金</span></div>
+          <div class="chk" data-k="p2" data-on="0" style="display:flex;align-items:center;gap:10px;cursor:pointer;"><span class="box" style="width:22px;height:22px;flex:0 0 auto;border-radius:6px;border:2.5px solid var(--line);background:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:13px;"></span><span class="lbl" style="font-family:'Klee One';font-weight:600;font-size:14px;color:var(--ink);">Suica</span></div>
+          <div class="chk" data-k="p3" data-on="0" style="display:flex;align-items:center;gap:10px;cursor:pointer;"><span class="box" style="width:22px;height:22px;flex:0 0 auto;border-radius:6px;border:2.5px solid var(--line);background:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:13px;"></span><span class="lbl" style="font-family:'Klee One';font-weight:600;font-size:14px;color:var(--ink);">スマホ</span></div>
+          <div class="chk" data-k="p4" data-on="0" style="display:flex;align-items:center;gap:10px;cursor:pointer;"><span class="box" style="width:22px;height:22px;flex:0 0 auto;border-radius:6px;border:2.5px solid var(--line);background:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:13px;"></span><span class="lbl" style="font-family:'Klee One';font-weight:600;font-size:14px;color:var(--ink);">モバイルバッテリー</span></div>
+          <div class="chk" data-k="p5" data-on="0" style="display:flex;align-items:center;gap:10px;cursor:pointer;"><span class="box" style="width:22px;height:22px;flex:0 0 auto;border-radius:6px;border:2.5px solid var(--line);background:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:13px;"></span><span class="lbl" style="font-family:'Klee One';font-weight:600;font-size:14px;color:var(--ink);">カメラ・充電器</span></div>
+          <div class="chk" data-k="p6" data-on="0" style="display:flex;align-items:center;gap:10px;cursor:pointer;"><span class="box" style="width:22px;height:22px;flex:0 0 auto;border-radius:6px;border:2.5px solid var(--line);background:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:13px;"></span><span class="lbl" style="font-family:'Klee One';font-weight:600;font-size:14px;color:var(--ink);">タオル</span></div>
+          <div class="chk" data-k="p7" data-on="0" style="display:flex;align-items:center;gap:10px;cursor:pointer;"><span class="box" style="width:22px;height:22px;flex:0 0 auto;border-radius:6px;border:2.5px solid var(--line);background:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:13px;"></span><span class="lbl" style="font-family:'Klee One';font-weight:600;font-size:14px;color:var(--ink);">着替え</span></div>
+          <div class="chk" data-k="p8" data-on="0" style="display:flex;align-items:center;gap:10px;cursor:pointer;"><span class="box" style="width:22px;height:22px;flex:0 0 auto;border-radius:6px;border:2.5px solid var(--line);background:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:13px;"></span><span class="lbl" style="font-family:'Klee One';font-weight:600;font-size:14px;color:var(--ink);">サンダル</span></div>
+          <div class="chk" data-k="p9" data-on="0" style="display:flex;align-items:center;gap:10px;cursor:pointer;"><span class="box" style="width:22px;height:22px;flex:0 0 auto;border-radius:6px;border:2.5px solid var(--line);background:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:13px;"></span><span class="lbl" style="font-family:'Klee One';font-weight:600;font-size:14px;color:var(--ink);">帽子</span></div>
+          <div class="chk" data-k="p10" data-on="0" style="display:flex;align-items:center;gap:10px;cursor:pointer;"><span class="box" style="width:22px;height:22px;flex:0 0 auto;border-radius:6px;border:2.5px solid var(--line);background:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:13px;"></span><span class="lbl" style="font-family:'Klee One';font-weight:600;font-size:14px;color:var(--ink);">日焼け止め</span></div>
+        </div>
+        <div style="height:1px;background:var(--line);margin:16px 0;"></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:9px 16px;">
+          <div class="chk" data-k="p11" data-on="0" style="display:flex;align-items:center;gap:10px;cursor:pointer;"><span class="box" style="width:22px;height:22px;flex:0 0 auto;border-radius:6px;border:2.5px solid var(--line);background:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:13px;"></span><span class="lbl" style="font-family:'Klee One';font-weight:600;font-size:14px;color:var(--ink);">飲み物</span></div>
+          <div class="chk" data-k="p12" data-on="0" style="display:flex;align-items:center;gap:10px;cursor:pointer;"><span class="box" style="width:22px;height:22px;flex:0 0 auto;border-radius:6px;border:2.5px solid var(--line);background:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:13px;"></span><span class="lbl" style="font-family:'Klee One';font-weight:600;font-size:14px;color:var(--ink);">レジャーシート</span></div>
+          <div class="chk" data-k="p13" data-on="0" style="display:flex;align-items:center;gap:10px;cursor:pointer;"><span class="box" style="width:22px;height:22px;flex:0 0 auto;border-radius:6px;border:2.5px solid var(--line);background:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:13px;"></span><span class="lbl" style="font-family:'Klee One';font-weight:600;font-size:14px;color:var(--ink);">ゴミ袋</span></div>
+          <div class="chk" data-k="p14" data-on="0" style="display:flex;align-items:center;gap:10px;cursor:pointer;"><span class="box" style="width:22px;height:22px;flex:0 0 auto;border-radius:6px;border:2.5px solid var(--line);background:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:13px;"></span><span class="lbl" style="font-family:'Klee One';font-weight:600;font-size:14px;color:var(--ink);">ウェットティッシュ</span></div>
+          <div class="chk" data-k="p15" data-on="0" style="display:flex;align-items:center;gap:10px;cursor:pointer;"><span class="box" style="width:22px;height:22px;flex:0 0 auto;border-radius:6px;border:2.5px solid var(--line);background:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:13px;"></span><span class="lbl" style="font-family:'Klee One';font-weight:600;font-size:14px;color:var(--ink);">虫よけスプレー</span></div>
+        </div>
+        <div style="margin-top:16px;padding:11px 16px;background:var(--paper2);border-radius:14px;text-align:center;font-size:12px;color:var(--sub);font-weight:600;">忘れ物がないか、出発前にチェックしてね ♡</div>
+      </div>
+      <div class="shade" style="position:absolute;inset:0;border-radius:22px;pointer-events:none;opacity:0;background:linear-gradient(90deg, rgba(40,25,5,.34) 0%, rgba(40,25,5,0) 30%, rgba(255,255,255,0) 72%, rgba(255,255,255,.5) 100%);"></div>
+    </div>
+
+    <!-- ===== 7 ACCESS ===== -->
+    <div class="leaf" style="position:absolute;inset:0;transform-origin:left center;backface-visibility:hidden;-webkit-backface-visibility:hidden;will-change:transform;">
+      <div class="card" style="height:100%;overflow-y:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;background:var(--paper);border:2px solid var(--line);border-radius:22px;padding:28px 22px 26px;position:relative;box-shadow:inset 0 0 0 6px var(--paper),inset 0 0 0 7.5px var(--line),0 16px 34px -16px rgba(90,60,20,.5);">
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;">
+          <div>
+            <div style="font-family:'Kaushan Script',cursive;font-size:32px;color:var(--honey-d);line-height:1;">Access &amp; Info</div>
+            <div style="display:flex;align-items:center;gap:8px;margin-top:7px;"><span style="font-size:13px;color:var(--sub);letter-spacing:.1em;">アクセス＆情報</span><span style="height:1px;width:20px;background:var(--line);"></span></div>
+          </div>
+          <img src="S__28917771_0.jpg" alt="" style="width:64px;height:64px;object-fit:contain;mix-blend-mode:multiply;flex:0 0 auto;">
+        </div>
+        <div style="font-family:'Klee One';font-weight:600;font-size:13.5px;color:var(--red);margin:16px 0 8px;">🚃 電車での行き方（例）</div>
+        <div style="display:flex;align-items:center;gap:8px;padding:10px 12px;border:2px solid var(--line);border-radius:12px;margin-bottom:9px;font-size:12.5px;color:var(--ink);"><b style="background:var(--sky);color:#fff;padding:3px 9px;border-radius:8px;font-family:'Klee One';">東京駅</b><span style="flex:1;text-align:center;color:var(--sub);font-size:11px;">特急さざなみ 約2時間</span><b style="background:var(--green);color:#fff;padding:3px 9px;border-radius:8px;font-family:'Klee One';">館山駅</b></div>
+        <div style="display:flex;align-items:center;gap:8px;padding:10px 12px;border:2px solid var(--line);border-radius:12px;font-size:12.5px;color:var(--ink);"><b style="background:var(--sky);color:#fff;padding:3px 9px;border-radius:8px;font-family:'Klee One';">大宮駅</b><span style="flex:1;text-align:center;color:var(--sub);font-size:11px;">特急わかしお 約2時間10分</span><b style="background:var(--green);color:#fff;padding:3px 9px;border-radius:8px;font-family:'Klee One';">館山駅</b></div>
+        <div style="font-family:'Klee One';font-weight:600;font-size:13.5px;color:var(--red);margin:18px 0 8px;">🚌 館山駅から沖ノ島へ</div>
+        <div style="padding:12px 14px;background:var(--paper2);border-radius:14px;font-size:13px;color:var(--ink);line-height:1.9;">館山駅 西口バス乗り場<br>→ バス（沖ノ島行き）約25分<br>→「沖ノ島」バス停下車、徒歩すぐ！</div>
+        <a href="https://www.google.com/maps/search/?api=1&query=%E6%B2%96%E3%83%8E%E5%B3%B6%20%E9%A4%A8%E5%B1%B1" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:7px;margin-top:12px;font-size:13px;font-weight:700;padding:10px 15px;border-radius:12px;text-decoration:none;background:#eaf6f0;color:#4a7a86;border:1.5px solid #cfe4dc;">📍 Googleマップで開く</a>
+        <div style="margin-top:16px;padding:12px 14px;border:2px dashed var(--honey);border-radius:14px;background:#fff9ec;">
+          <div style="font-family:'Klee One';font-weight:600;font-size:13px;color:var(--honey-d);">Check!</div>
+          <div style="font-size:12px;color:var(--ink);line-height:1.85;margin-top:4px;">・時刻は変更になる場合あり。事前に時刻表をチェックしてね♪<br>・バスの本数が少ないので、帰りの時間も確認しておこう♪</div>
+        </div>
+      </div>
+      <div class="shade" style="position:absolute;inset:0;border-radius:22px;pointer-events:none;opacity:0;background:linear-gradient(90deg, rgba(40,25,5,.34) 0%, rgba(40,25,5,0) 30%, rgba(255,255,255,0) 72%, rgba(255,255,255,.5) 100%);"></div>
+    </div>
+
+    <!-- ===== 8 MEMORIES ===== -->
+    <div class="leaf" style="position:absolute;inset:0;transform-origin:left center;backface-visibility:hidden;-webkit-backface-visibility:hidden;will-change:transform;">
+      <div class="card" style="height:100%;overflow-y:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;background:var(--paper);border:2px solid var(--line);border-radius:22px;padding:28px 22px 26px;position:relative;box-shadow:inset 0 0 0 6px var(--paper),inset 0 0 0 7.5px var(--line),0 16px 34px -16px rgba(90,60,20,.5);">
+        <div style="text-align:center;">
+          <div style="font-family:'Kaushan Script',cursive;font-size:32px;color:var(--honey-d);line-height:1;">Our Memories</div>
+          <div style="display:flex;align-items:center;justify-content:center;gap:8px;margin:8px 0 16px;"><span style="height:1px;width:24px;background:var(--line);"></span><span style="font-size:13px;color:var(--sub);letter-spacing:.1em;">思い出のページ</span><span style="height:1px;width:24px;background:var(--line);"></span></div>
+        </div>
+        <div style="display:flex;gap:10px;justify-content:center;align-items:flex-start;margin-bottom:20px;">
+          <div style="background:#fff;padding:7px 7px 20px;border-radius:4px;box-shadow:0 6px 14px -6px rgba(90,60,20,.4);transform:rotate(-5deg);position:relative;"><div style="position:absolute;top:-8px;left:50%;transform:translateX(-50%) rotate(3deg);width:40px;height:15px;background:rgba(210,150,70,.45);"></div><div style="width:92px;height:92px;background:repeating-linear-gradient(45deg,#efe4c8 0 8px,#eaddba 8px 16px);border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--sub);text-align:center;">写真を<br>はってね</div></div>
+          <div style="background:#fff;padding:7px 7px 20px;border-radius:4px;box-shadow:0 6px 14px -6px rgba(90,60,20,.4);transform:rotate(4deg);margin-top:12px;position:relative;"><div style="position:absolute;top:-8px;left:50%;transform:translateX(-50%) rotate(-4deg);width:40px;height:15px;background:rgba(140,178,106,.5);"></div><div style="width:92px;height:92px;background:repeating-linear-gradient(45deg,#efe4c8 0 8px,#eaddba 8px 16px);border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--sub);text-align:center;">写真を<br>はってね</div></div>
+          <img src="S__28917772_0.jpg" alt="" style="width:66px;height:66px;object-fit:contain;mix-blend-mode:multiply;margin-top:20px;">
+        </div>
+        <div style="border-top:2px dotted var(--line);padding-top:14px;">
+          <div style="font-family:'Kaushan Script',cursive;font-size:18px;color:var(--red);">Today's Best Memory</div>
+          <div style="font-size:12px;color:var(--sub);margin:2px 0 8px;">今日いちばん楽しかったこと</div>
+          <div style="height:1px;background:var(--line);margin-bottom:18px;"></div>
+          <div style="font-family:'Kaushan Script',cursive;font-size:18px;color:var(--red);">Favorite Place</div>
+          <div style="font-size:12px;color:var(--sub);margin:2px 0 8px;">お気に入りの場所</div>
+          <div style="height:1px;background:var(--line);margin-bottom:18px;"></div>
+          <div style="font-family:'Kaushan Script',cursive;font-size:18px;color:var(--red);">Message to Future Us</div>
+          <div style="font-size:12px;color:var(--sub);margin:2px 0 8px;">未来の私たちへメッセージ</div>
+          <div style="height:1px;background:var(--line);"></div>
+        </div>
+      </div>
+      <div class="shade" style="position:absolute;inset:0;border-radius:22px;pointer-events:none;opacity:0;background:linear-gradient(90deg, rgba(40,25,5,.34) 0%, rgba(40,25,5,0) 30%, rgba(255,255,255,0) 72%, rgba(255,255,255,.5) 100%);"></div>
+    </div>
+
+    <!-- ===== 9 LAST ===== -->
+    <div class="leaf" style="position:absolute;inset:0;transform-origin:left center;backface-visibility:hidden;-webkit-backface-visibility:hidden;will-change:transform;">
+      <div class="card" style="height:100%;overflow:hidden;border-radius:22px;padding:24px;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#5c3a18;border:2px solid #d99b3e;background:linear-gradient(172deg,#ffe6a8 0%,#f6bd52 48%,#ea9433 100%);box-shadow:inset 0 0 0 6px #ffe6a8,inset 0 0 0 7.5px #d99b3e,0 16px 34px -16px rgba(90,60,20,.55);">
+        <svg class="deco" style="position:absolute;top:26px;left:24px;width:36px;animation:floaty 5s ease-in-out infinite;" viewBox="0 0 44 32"><use href="#bee"/></svg>
+        <div style="font-family:'Kaushan Script',cursive;font-size:32px;color:#fff;text-shadow:0 3px 0 rgba(160,90,30,.5);line-height:1;">Last Page</div>
+        <p style="font-family:'Klee One';font-weight:600;font-size:17px;line-height:2;margin:20px 0;">この夏が、ずっと<br>忘れられない思い出に<br>なりますように。♡</p>
+        <div style="width:150px;height:150px;background:#fffdf6;border-radius:22px;box-shadow:0 10px 22px -10px rgba(120,70,20,.5);display:flex;align-items:center;justify-content:center;padding:8px;border:3px solid #fff;">
+          <img src="S__28917773_0.jpg" alt="" style="width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply;">
+        </div>
+        <div style="font-family:'Kaushan Script',cursive;font-size:21px;color:var(--red);margin-top:16px;">Every journey becomes<br>a beautiful story</div>
+        <div style="margin-top:18px;font-family:'Klee One';font-weight:600;font-size:12.5px;background:rgba(255,255,255,.72);padding:8px 18px;border-radius:999px;">Thank you for this wonderful day ♡</div>
+      </div>
+      <div class="shade" style="position:absolute;inset:0;border-radius:22px;pointer-events:none;opacity:0;background:linear-gradient(90deg, rgba(40,25,5,.34) 0%, rgba(40,25,5,0) 30%, rgba(255,255,255,0) 72%, rgba(255,255,255,.5) 100%);"></div>
+    </div>
+
+  </div>
+
+  <!-- bottom pager -->
+  <div style="position:absolute;bottom:20px;left:50%;transform:translateX(-50%);z-index:30;display:flex;align-items:center;gap:14px;">
+    <button id="prev" aria-label="前へ" style="border:none;background:rgba(255,255,255,.9);width:34px;height:34px;border-radius:50%;font-size:18px;font-weight:900;color:var(--honey-d);cursor:pointer;box-shadow:0 3px 8px -3px rgba(90,50,10,.5);">‹</button>
+    <div id="dots" style="display:flex;align-items:center;gap:6px;">
+      <span class="dot" style="height:8px;width:22px;border-radius:999px;background:var(--honey-d);transition:all .25s;"></span>
+      <span class="dot" style="height:8px;width:8px;border-radius:999px;background:rgba(255,255,255,.6);transition:all .25s;"></span>
+      <span class="dot" style="height:8px;width:8px;border-radius:999px;background:rgba(255,255,255,.6);transition:all .25s;"></span>
+      <span class="dot" style="height:8px;width:8px;border-radius:999px;background:rgba(255,255,255,.6);transition:all .25s;"></span>
+      <span class="dot" style="height:8px;width:8px;border-radius:999px;background:rgba(255,255,255,.6);transition:all .25s;"></span>
+      <span class="dot" style="height:8px;width:8px;border-radius:999px;background:rgba(255,255,255,.6);transition:all .25s;"></span>
+      <span class="dot" style="height:8px;width:8px;border-radius:999px;background:rgba(255,255,255,.6);transition:all .25s;"></span>
+      <span class="dot" style="height:8px;width:8px;border-radius:999px;background:rgba(255,255,255,.6);transition:all .25s;"></span>
+      <span class="dot" style="height:8px;width:8px;border-radius:999px;background:rgba(255,255,255,.6);transition:all .25s;"></span>
+    </div>
+    <button id="next" aria-label="次へ" style="border:none;background:rgba(255,255,255,.9);width:34px;height:34px;border-radius:50%;font-size:18px;font-weight:900;color:var(--honey-d);cursor:pointer;box-shadow:0 3px 8px -3px rgba(90,50,10,.5);">›</button>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:390,&quot;height&quot;:844},&quot;palette&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;はちみつ&quot;,&quot;ローズ&quot;,&quot;そら&quot;],&quot;default&quot;:&quot;はちみつ&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;見た目&quot;},&quot;decorations&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;見た目&quot;},&quot;swipeHint&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;見た目&quot;}}">
+class Component extends DCLogic {
+  componentDidMount(){
+    const root = document.getElementById('book-root');
+    if(!root) return;
+    const pal = this.props.palette;
+    const maps = {
+      'ローズ': {'--honey':'#e88aa8','--honey-d':'#cf6f8e','--red':'#d1556a','--sky':'#c58fbf'},
+      'そら': {'--honey':'#7fb6dc','--honey-d':'#5c96c4','--red':'#e0894a','--sky':'#9fceea'}
+    };
+    if(pal && maps[pal]) Object.entries(maps[pal]).forEach(([k,v])=>root.style.setProperty(k,v));
+    if(this.props.decorations === false) root.querySelectorAll('.deco').forEach(e=>e.style.display='none');
+    if(this.props.swipeHint === false){ const h=document.getElementById('swipeHint'); if(h) h.style.display='none'; }
+
+    // checklist
+    const KEY='shiori-oki-checks';
+    let saved={}; try{ saved=JSON.parse(localStorage.getItem(KEY)||'{}'); }catch(e){}
+    root.querySelectorAll('.chk').forEach(c=>{
+      const id=c.getAttribute('data-k');
+      const box=c.querySelector('.box'), lbl=c.querySelector('.lbl');
+      const apply=(on)=>{
+        c.setAttribute('data-on', on?'1':'0');
+        box.textContent = on?'✓':'';
+        box.style.background = on?'var(--honey-d)':'#fff';
+        box.style.color = '#fff';
+        box.style.borderColor = on?'var(--honey-d)':'var(--line)';
+        lbl.style.opacity = on?'.45':'1';
+        lbl.style.textDecoration = on?'line-through':'none';
+      };
+      apply(!!saved[id]);
+      c.addEventListener('click',(e)=>{
+        if(root.__wasDrag){ return; }
+        const on = c.getAttribute('data-on')!=='1';
+        apply(on); saved[id]=on;
+        try{ localStorage.setItem(KEY, JSON.stringify(saved)); }catch(e){}
+      });
+    });
+
+    // ---- PAGE FLIP ----
+    const book = document.getElementById('book');
+    const leaves = [...book.querySelectorAll('.leaf')];
+    const dots = [...root.querySelectorAll('.dot')];
+    const tab = document.getElementById('pagetab');
+    const total = leaves.length;
+    let p = 0, animating=false;
+
+    const setShade=(leaf,v)=>{ const s=leaf.querySelector('.shade'); if(s) s.style.opacity=v; };
+    const layout=(animate)=>{
+      leaves.forEach((leaf,i)=>{
+        leaf.style.transition = animate ? 'transform .55s cubic-bezier(.33,0,.2,1)' : 'none';
+        const flipped = i < p;
+        leaf.style.transform = 'rotateY(' + (flipped?-180:0) + 'deg)';
+        leaf.style.zIndex = flipped ? i : (total*2 - i);
+        const s=leaf.querySelector('.shade');
+        if(s){ s.style.transition = animate?'opacity .4s ease':'none'; s.style.opacity=0; }
+      });
+      dots.forEach((d,k)=>{ const on=k===p; d.style.width=on?'22px':'8px'; d.style.background=on?'var(--honey-d)':'rgba(255,255,255,.6)'; });
+      if(tab) tab.textContent = (p+1);
+    };
+    layout(false);
+
+    const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+    let dragging=false, startX=0, startY=0, axis=null, moving=null, dir=0, w=0;
+
+    book.addEventListener('pointerdown',(e)=>{
+      if(animating) return;
+      dragging=true; axis=null; moving=null; dir=0;
+      startX=e.clientX; startY=e.clientY; w=book.clientWidth||1;
+      root.__wasDrag=false;
+    });
+    book.addEventListener('pointermove',(e)=>{
+      if(!dragging) return;
+      const dx=e.clientX-startX, dy=e.clientY-startY;
+      if(axis===null){
+        if(Math.abs(dx)<7 && Math.abs(dy)<7) return;
+        axis = Math.abs(dx)>Math.abs(dy) ? 'x' : 'y';
+        if(axis==='x'){ try{ book.setPointerCapture(e.pointerId); }catch(_){} }
+      }
+      if(axis!=='x') return;
+      root.__wasDrag=true;
+      if(dx<0 && p<total-1){
+        dir=1; moving=leaves[p];
+        const ang=clamp(dx/w*180,-180,0);
+        moving.style.transition='none'; moving.style.zIndex=total*3;
+        moving.style.transform='rotateY('+ang+'deg)';
+        setShade(moving, Math.sin((-ang/180)*Math.PI));
+      } else if(dx>0 && p>0){
+        dir=-1; moving=leaves[p-1];
+        const ang=clamp(-180+dx/w*180,-180,0);
+        moving.style.transition='none'; moving.style.zIndex=total*3;
+        moving.style.transform='rotateY('+ang+'deg)';
+        setShade(moving, Math.sin((-ang/180)*Math.PI));
+      }
+    });
+    const endDrag=(e)=>{
+      if(!dragging) return; dragging=false;
+      if(axis!=='x' || !moving){ axis=null; moving=null; setTimeout(()=>{root.__wasDrag=false;},0); return; }
+      const dx=(e.clientX||startX)-startX;
+      const commit = Math.abs(dx) > w*0.26;
+      if(commit && dir===1) p++;
+      else if(commit && dir===-1) p--;
+      moving=null; dir=0; axis=null;
+      animating=true; layout(true);
+      setTimeout(()=>{ animating=false; root.__wasDrag=false; }, 580);
+    };
+    book.addEventListener('pointerup', endDrag);
+    book.addEventListener('pointercancel', endDrag);
+
+    const go=(d)=>{ if(animating) return; const np=clamp(p+d,0,total-1); if(np===p) return; p=np; animating=true; layout(true); setTimeout(()=>animating=false,580); };
+    const pv=document.getElementById('prev'), nx=document.getElementById('next');
+    if(pv) pv.addEventListener('click',()=>go(-1));
+    if(nx) nx.addEventListener('click',()=>go(1));
+    window.addEventListener('resize',()=>layout(false));
+  }
+}
+</script>
+</body>
+</html>
